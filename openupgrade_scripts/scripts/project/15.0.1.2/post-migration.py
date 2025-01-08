@@ -87,6 +87,22 @@ def _activate_project_stages_conditionally(env):
         internal_group.implied_ids += stage_group
 
 
+def replace_old_stages(env):
+    _logger.warning(
+        [m.get("xmlid") for m in env["project.project.stage"].search([]).get_metadata()]
+    )
+    stage_couples = [
+        ("project.project_status_pending", "project.project_project_stage_0"),
+        ("project.project_status_in_progress", "project.project_project_stage_1"),
+        ("project.project_status_complete", "project.project_project_stage_2"),
+    ]
+    for old_stage_xmlid, new_stage_xmlid in stage_couples:
+        old_stage = env.ref(old_stage_xmlid)
+        projects = env["project.project"].search([("stage_id", "=", old_stage.id)])
+        projects.write({"stage_id": env.ref(new_stage_xmlid).id})
+        old_stage.active = False
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     _convert_project_task_assigned_users(env)
@@ -104,3 +120,4 @@ def migrate(env, version):
             "rating_project_request_email_template",
         ],
     )
+    replace_old_stages(env)
