@@ -89,6 +89,19 @@ merged_modules = {
     "document_page_group": "document_page_access_group",
     # OCA/l10n-france
     "l10n_fr_pos_cert_update_draft_order_line": "l10n_fr_pos_cert",
+    # OCA/l10n-italy
+    "l10n_it_account_tax_kind": "l10n_it_edi_extension",
+    "l10n_it_fatturapa_in": "l10n_it_edi_extension",
+    "l10n_it_fatturapa_out": "l10n_it_edi_extension",
+    "l10n_it_fatturapa_pec": "l10n_it_edi_extension",
+    "l10n_it_fatturapa": "l10n_it_edi_extension",
+    "l10n_it_fiscal_document_type": "l10n_it_edi_extension",
+    "l10n_it_fiscal_payment_term": "l10n_it_edi_extension",
+    "l10n_it_fiscalcode": "l10n_it_edi_extension",
+    "l10n_it_ipa": "l10n_it_edi_extension",
+    "l10n_it_pec": "l10n_it_edi_extension",
+    "l10n_it_rea": "l10n_it_edi_extension",
+    "l10n_it_vat_payability": "l10n_it_edi_extension",
     # OCA/sale-workflow
     "sale_order_qty_change_no_recompute": "sale",
     "sale_partner_shipping_invoice_domain": "sale_commercial_partner",
